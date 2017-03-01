@@ -10,20 +10,20 @@
 <body>
 <br>
 <center>
-    <h1>Вход в систему</h1>
+    <h1>Bank customers account</h1>
     <%session.invalidate();
     System.out.println("Session close");
     %>
     <form action="/LoginServlet" method="GET">
-        Пользователь:<input type="text" name="user" size="15"><br>
-        Пароль:<input type="password" name="password" size="15"><br>
+        Login:<input type="text" name="user" size="15"><br>
+        Password:<input type="password" name="password" size="15"><br>
         <p>
             <small>
-                <input type="submit" name="login" value="Войти в систему">
+                <input type="submit" name="login" value="Log in">
             </small>
     </form>
     <form action="/jsp/RegistrationPage.jsp">
-        <input type="submit" name="registration" value="Зарегистрироваться">
+        <input type="submit" name="registration" value="Registration">
     </form>
 </center>
 <br>

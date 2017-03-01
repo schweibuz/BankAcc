@@ -58,7 +58,7 @@
             </tr>
         </table>
         <tr><br>
-            <td><input type="submit" name="registration" value="Sign up"></td>
+            <td><input type="submit" name="registration" value="Register"></td>
             <%--<td><input type="button" value="cancel" onclick="history.back()" /></td>--%>
 
     </form>

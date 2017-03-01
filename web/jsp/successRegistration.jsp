@@ -15,7 +15,7 @@
 
     <p>Please enter your login and password on Login Page to start</p>
     <form action="/jsp/LoginPage.jsp">
-        <input type="submit" name="login" value="log in">
+        <input type="submit" name="login" value="Log in">
     </form>
 </center>
 </body>
