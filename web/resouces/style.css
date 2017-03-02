@@ -1,0 +1,32 @@
+html {
+    padding-top: 10px;
+    background-color: rgba(102, 122, 113, 0.06);
+}
+
+body {
+    width: 80%;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 7px 8px 100px 8px rgba(144, 195, 199, 0.52);
+    background-color: rgba(213, 243, 243, 0.72);
+}
+
+#clock { /* Стили применяются к элементу с id="clock" */
+    /*font: old 24pt sans; !* Использовать большой полужирный шрифт *!*/
+    background: #eeffe4; /* Светлый, голубовато-серый фон */
+    padding: 1px 1px 1px 55px; /* Отступы вокруг */
+    border: solid black 1px; /* И сплошная черная рамка */
+    border-radius: 5px; /* Закругленные углы (если поддерживаются) */
+    margin: 0px 10px 0px 0px;
+    float: right;
+}
+
+div1 {
+    padding-right: 179px;
+}
+div2 {
+    padding-right: 165px;
+}
+
+

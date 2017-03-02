@@ -6,25 +6,40 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
     <title>Login page</title>
+    <link href="/resouces/style.css"rel="stylesheet">
+    <script src="/resouces/chnge.js"></script>
+    <span id="clock"></span>
+    <form>
+        <select name="paint" id="paint">
+            <option value=""> Default</option>
+            <option value="#e6ffff">White</option>
+            <option value="#ffd6cc">Red</option>
+            <option value="#c1f0c1">Green</option>
+        </select>
+
+        <input type="button" onclick="change_color()" value="change" />
+    </form></br>
+
 </head>
-<body>
-<br>
+<body onload="olha()">
 <center>
-    <h1>Bank customers account</h1>
+    <h1>Bank current account customers</h1>
     <%session.invalidate();
     System.out.println("Session close");
     %>
     <form action="/LoginServlet" method="GET">
-        Login:<input type="text" name="user" size="15"><br>
-        Password:<input type="password" name="password" size="15"><br>
-        <p>
-            <small>
-                <input type="submit" name="login" value="Log in">
-            </small>
+        <span style="font-family:'Courier New', monospace; padding-right:36px;">
+            Login:</span><input type="text" name="user" size="20"><br>
+        <span style="font-family:'Courier New', monospace; padding-right:7px;">
+            Password:</span><input type="password" name="password" size="20"><br>
+
+            <div1 class="panel"><input type="submit" name="login" value="Log in"> or</div1>
+
     </form>
     <form action="/jsp/RegistrationPage.jsp">
-        <input type="submit" name="registration" value="Registration">
+        <div2 class="panel"><input type="submit" name="registration" value="Registration"></div2>
     </form>
+
 </center>
 <br>
 </body>

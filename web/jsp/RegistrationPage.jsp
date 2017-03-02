@@ -7,15 +7,22 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
     <title>Registration page</title>
+    <link href="/resouces/style.css" rel="stylesheet">
+    <script src="/resouces/chnge.js"></script>
+    <script src="/resouces/validate.js"></script>
+    <span id="clock"></span>
 </head>
-<body>
-<%session.invalidate();
-    System.out.println("Session close");%>
+<body onload="olha()">
+<%
+    session.invalidate();
+    System.out.println("Session close");
+%>
 <br>
 <center>
-    <form action="/RegistrationServlet" method="POST">
-        <table border="1">
-            <caption>New User Registration</caption>
+    <h1>Registration page</h1>
+    <form name="myForm" action="/RegistrationServlet" method="POST" onsubmit="return validateForm()">
+        <%--onsubmit="return validate(this)"--%>
+        <table>
             <tr>
                 <td>Login:</td>
                 <td><input type="text" name="user" size="25"></td>
@@ -50,23 +57,50 @@
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><input type="txt" name="email" size="25"></td>
+                <td><input type="email" name="email" size="25"></td>
             </tr>
             <tr>
                 <td>Credit card:</td>
                 <td><input type="txt" name="credit_card" size="25"></td>
             </tr>
         </table>
-        <tr><br>
-            <td><input type="submit" name="registration" value="Register"></td>
+        <br>
+            <input type="submit" name="registration" value="Register">
+            <input type="button" onclick="validate(this.form)" value="check">
+            <input type="button" value="Quit" onclick="javascript:window.location='/jsp/LoginPage.jsp'">
             <%--<td><input type="button" value="cancel" onclick="history.back()" /></td>--%>
 
     </form>
-            <form action="/jsp/LoginPage.jsp">
-                <input type="submit" name="quit" value="Quit">
-            </form>
-        </tr>
-
 </center>
 </body>
+
+
+<%--<body>--%>
+<%--<form onsubmit="return checkForm(this)" action="index.php" method="post">--%>
+    <%--<div id="contact-form">--%>
+        <%--<div>--%>
+            <%--<label for="fio" class="label">Ваше имя</label>--%>
+            <%--<input type="text" value="" name="fio" id="fio" class="w-460" />--%>
+            <%--&lt;%&ndash;<p id='err_fio' class='error'></p>&ndash;%&gt;--%>
+        <%--</div>--%>
+        <%--<div>--%>
+            <%--<label for="phone" class="label">Телефон</label>--%>
+            <%--<input type="text" value="" name="phone" id="phone" class="w-460" />--%>
+        <%--</div>--%>
+        <%--<input id="submit-form" type="submit" value="Оформить заказ" />--%>
+    <%--</div>--%>
+<%--</form>--%>
+
+<%--<script type="text/javascript">--%>
+    <%--function checkForm(form){--%>
+        <%--if (document.getElementById('fio').value=="") {--%>
+
+            <%--document.getElementById('err_fio').innerHTML='Введите имя';--%>
+            <%--return false;--%>
+        <%--};--%>
+        <%--return true;--%>
+    <%--};--%>
+<%--</script>--%>
+<%--</body>--%>
+
 </html>

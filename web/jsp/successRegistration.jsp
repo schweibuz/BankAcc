@@ -4,11 +4,15 @@
 <html>
 <head>
     <title>Success Registration</title>
+    <link href="/resouces/style.css"rel="stylesheet">
+    <script src="/resouces/chnge.js"></script>
+    <span id="clock"></span>
 </head>
-<body>
+<body onload="olha()">
 <br>
-<h1>Registration was successful</h1>
 <center>
+<h1>Registration was successful</h1>
+
     <% Clients currentUser = (Clients) session.getAttribute("currentSessionUser");%>
 
     Welcome <%=currentUser.getName()+" "+currentUser.getLast_name()%>

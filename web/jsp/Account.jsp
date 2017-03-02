@@ -5,8 +5,11 @@
 <html>
 <head>
     <title>Success Registration</title>
+    <link href="/resouces/style.css"rel="stylesheet">
+    <script src="/resouces/chnge.js"></script>
+    <span id="clock"></span>
 </head>
-<body>
+<body onload="olha()">
 <center>
     <% Clients currentUser = (Clients) session.getAttribute("currentSessionUser");%>
 <h1>Hello <%=currentUser.getName()%>. It's your personal account</h1>
@@ -33,6 +36,7 @@
         <tr><td>Description:</td><td><c:out value="${employee.description}"/></td></tr>
     </c:forEach>
 </table>
+<br/>
 <form action="/jsp/LoginPage.jsp">
     <input type="submit" name="LOGOUT" value="Quit">
 </form>

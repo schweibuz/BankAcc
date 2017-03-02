@@ -27,7 +27,7 @@ public class PostAdmin extends HttpServlet {
                 request.setAttribute("employees", AdminDAO.getAllUsers());
                 request.getRequestDispatcher("/jsp/Admin.jsp").forward(request, response);
             } else {
-                response.sendRedirect("/html/errorRegistration.html");
+                response.sendRedirect("/resources/errorRegistration.html");
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

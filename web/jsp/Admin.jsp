@@ -7,9 +7,12 @@
 <head>
     <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />--%>
     <title>Admin</title>
+        <link href="/resouces/style.css"rel="stylesheet">
+        <script src="/resouces/chnge.js"></script>
+        <span id="clock"></span>
     <center><h1>Welcome to admin page.</h1></center>
 </head>
-<body>
+<body onload="olha()">
 
 <form action="/AddSalary" method="POST">
     <table border="1">
@@ -32,15 +35,14 @@
         </tr>
         <tr>
             <td>Description:</td>
-            <td><input type="txt" name="description" size="40" height="200"></td>
+            <%--<td><input type="txt" name="description" size="40" height="200"></td>--%>
+            <td><textarea name="description" style="display:block;width:350px;height:100px"></textarea></td>
+
         </tr>
     </table>
-    <td><input type="submit" name="addSalary" value="CONFIRM"></td>
-</form>
-<form action="/jsp/LoginPage.jsp">
-    <td><input type="submit" name="LOGOUT" value="Quit"></td>
-    <%--<% Clients currentUser = (Clients) session.getAttribute("currentSessionUser");%>--%>
-    <%--<% session.invalidate(); %>--%>
+    <br/>
+    <input type="submit" name="addSalary" value="Confirm">
+    <input type="button" value="Quit" onclick="javascript:window.location='/jsp/LoginPage.jsp'">
 </form>
 <br/>
 <table border="1">
