@@ -34,8 +34,7 @@ public class Clients {
 
     public Clients(String name, String last_name, String land,
                    String city, String address, String credit_card, String phone,
-                   String email, String login, String password, Timestamp reg_date,
-                   int salary, int raise_salary, int income, String description) {
+                   String email, String login, String password, Timestamp reg_date) {
         this.name = name;
         this.last_name = last_name;
         this.land = land;
@@ -47,6 +46,9 @@ public class Clients {
         this.login = login;
         this.password = password;
         this.reg_date = reg_date;
+    }
+
+    public Clients(int salary, int raise_salary, int income, String description) {
         this.salary = salary;
         this.raise_salary = raise_salary;
         this.income = income;

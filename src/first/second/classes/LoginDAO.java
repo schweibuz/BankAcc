@@ -45,10 +45,12 @@ public class LoginDAO {
             } else if (more) {
                 String firstName = rs.getString("name");
                 String lastName = rs.getString("last_name");
+                int id = rs.getInt("id_user");
 
                 System.out.println("Hello " + firstName);
                 clnt.setName(firstName);
                 clnt.setLast_name(lastName);
+                clnt.setId(id);
                 clnt.setValid(true);
             }
         } catch (SQLException e) {

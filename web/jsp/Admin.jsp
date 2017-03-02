@@ -45,36 +45,48 @@
 <br/>
 <table border="1">
     <caption>Employees</caption>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Address</th>
+        <th>Credit card</th>
+        <th>Phone number</th>
+        <th>Email</th>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Registration date</th>
+        <th>Salary</th>
+        <th>Quarterly bonus</th>
+        <th>Other supply</th>
+        <th>Description</th>
+    </tr>
     <c:forEach items="${requestScope.employees}" var="employee">
-        <tr>
-            <th>ID</th><th>Name</th><th>Last name</th><th>Country</th><th>City</th>
-            <th>Address</th><th>Credit card</th><th>Phone number</th><th>Email</th><th>Login</th>
-            <th>Password</th><th>Registration date</th><th>Salary</th><th>Quarterly bonus</th>
-            <th>Other supply</th><th>Description</th>
-        </tr>
-            <tr>
-            <td>${employee.id}</td>
-            <td><c:out value="${employee.name}"/></td>
-            <td><c:out value="${employee.last_name}"/></td>
-            <td><c:out value="${employee.land}"/></td>
-            <td><c:out value="${employee.city}"/></td>
-            <td><c:out value="${employee.address}"/></td>
-            <td><c:out value="${employee.credit_card}"/></td>
-            <td><c:out value="${employee.phone}"/></td>
-            <td><c:out value="${employee.email}"/></td>
-            <td><c:out value="${employee.login}"/></td>
-            <td><c:out value="${employee.password}"/></td>
-            <td><c:out value="${employee.reg_date}"/></td>
-            <td><c:out value="${employee.salary}"/></td>
-            <td><c:out value="${employee.raise_salary}"/></td>
-            <td><c:out value="${employee.income}"/></td>
-            <td><c:out value="${employee.description}"/></td>
-            <td>
-                <a href="delete?id=${employee.id}">
-                    <img src="delete.png">
-                </a>
-            </td>
-        </tr>
+    <tr>
+        <td>${employee.id}</td>
+        <td><c:out value="${employee.name}"/></td>
+        <td><c:out value="${employee.last_name}"/></td>
+        <td><c:out value="${employee.land}"/></td>
+        <td><c:out value="${employee.city}"/></td>
+        <td><c:out value="${employee.address}"/></td>
+        <td><c:out value="${employee.credit_card}"/></td>
+        <td><c:out value="${employee.phone}"/></td>
+        <td><c:out value="${employee.email}"/></td>
+        <td><c:out value="${employee.login}"/></td>
+        <td><c:out value="${employee.password}"/></td>
+        <td><c:out value="${employee.reg_date}"/></td>
+        <td><c:out value="${employee.salary}"/></td>
+        <td><c:out value="${employee.raise_salary}"/></td>
+        <td><c:out value="${employee.income}"/></td>
+        <td><c:out value="${employee.description}"/></td>
+        <td>
+            <a href="delete?id=${employee.id}">
+                <img src="delete.png">
+            </a>
+        </td>
+    </tr>
     </c:forEach>
 </table>
 </body>

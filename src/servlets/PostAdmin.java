@@ -17,12 +17,11 @@ public class PostAdmin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = "admin";
         String password = "admin";
-        Clients admin = new Clients(login, password);
 
         try {
             Clients clAdmin = (Clients) request.getSession().getAttribute("currentSessionAdmin");
 
-            if (admin.getLogin().equals(clAdmin.getLogin()) && admin.getPassword().equals(clAdmin.getPassword())) {
+            if (clAdmin.getLogin().equals(login) && clAdmin.getPassword().equals(password)) {
 
                 System.out.println("session");
                 request.setAttribute("employees", AdminDAO.getAllUsers());

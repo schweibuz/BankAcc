@@ -12,9 +12,11 @@ import java.util.List;
 public class AdminDAO {
 
     public static List<Clients> getAllUsers() throws SQLException, ClassNotFoundException {
-        String query = "SELECT users.id_user, name, last_name, land, city, address, credit_card," +
-                "phone_number, email, login, password, reg_date, salary, raise_salary, " +
-                "income, account.description FROM users, account";
+        String query = "SELECT users.id_user, users.name, users.last_name, users.land, users.city, users.address, users.credit_card," +
+                "users.phone_number, users.email, users.login, users.password, users.reg_date, account.salary, account.raise_salary," +
+                "account.income, account.description " +
+                "FROM users, account " +
+                "WHERE users.id_user = account.id_user";
 
         try (Connection c = ConnectionManager.getConnection();
              PreparedStatement ps = c.prepareStatement(query);
@@ -41,6 +43,7 @@ public class AdminDAO {
                 int income = resultSet.getInt("income");
                 String description = resultSet.getString("description");
 
+
                 clientss.add(new Clients(id, name, last_name, land, city, address, credit_card,
                         phone, email, login, password, reg_date, salary, raise_salary, income, description));
 
@@ -54,8 +57,8 @@ public class AdminDAO {
     public static void addSalary(String id, String salary, String raise_salary, String income, String description) {
 
         String query = "UPDATE account " +
-                "SET  salary = ?, raise_salary= ?, income= ?, description = ?" +
-                "WHERE id_user='" + id + "'";
+                "SET  salary = ?, raise_salary = ?, income = ?, description = ?" +
+                "WHERE id_user ='" + id + "'";
 
         try (Connection c = ConnectionManager.getConnection();
              PreparedStatement ps = c.prepareStatement(query);

@@ -16,7 +16,7 @@
 <table border ="1">
     <c:forEach items="${requestScope.clients}" var="employee">
         <tr><td>Your Login:</td><td><c:out value="${employee.login}"/></td></tr>
-        <tr><td>Name:</td><td><c:out value="${employee.name}">guest></c:out></td></tr>
+        <tr><td>Name:</td><td><c:out value="${employee.name}"/></td></tr>
         <tr><td>Last Name:</td><td><c:out value="${employee.last_name}"/></td></tr>
         <tr><td>Country:</td><td><c:out value="${employee.land}"/></td></tr>
         <tr><td>City:</td><td><c:out value="${employee.city}"/></td></tr>
@@ -25,6 +25,8 @@
         <tr><td>Phone number:</td><td><c:out value="${employee.phone}"/></td></tr>
         <tr><td>Email:</td><td><c:out value="${employee.email}"/></td></tr>
         <tr><td>Registration date:</td><td><c:out value="${employee.reg_date}"/></td></tr>
+    </c:forEach>
+    <c:forEach items="${requestScope.account}" var="employee">
         <tr><td>Salary:</td><td><c:out value="${employee.salary}"/></td></tr>
         <tr><td>Quarterly bonus:</td><td><c:out value="${employee.raise_salary}"/></td></tr>
         <tr><td>Other supply:</td><td><c:out value="${employee.income}"/></td></tr>

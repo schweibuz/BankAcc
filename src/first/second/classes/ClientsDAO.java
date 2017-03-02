@@ -11,8 +11,7 @@ public class ClientsDAO {
     public static List<Clients> getClients(String check) throws SQLException, ClassNotFoundException {
 
         String query = "SELECT name, last_name, land, city, address, credit_card," +
-                "phone_number, email, login, password, reg_date, salary, raise_salary, " +
-                "income, account.description FROM users, account WHERE login ='" + check + "'";
+                "phone_number, email, login, password, reg_date FROM users WHERE login ='" + check + "'";
         try (Connection c = ConnectionManager.getConnection();        //try и круглые скобки-в JDK7 сам закроетконнект (try с ресурсами)
              PreparedStatement ps = c.prepareStatement(query);
              ResultSet resultSet = ps.executeQuery();
@@ -31,18 +30,34 @@ public class ClientsDAO {
                 String login = resultSet.getString("login");
                 String password = resultSet.getString("password");
                 java.sql.Timestamp reg_date = resultSet.getTimestamp("reg_date");
-                int salary = resultSet.getInt("salary");
-                int raise_salary = resultSet.getInt("raise_salary");
-                int income = resultSet.getInt("income");
-                String description = resultSet.getString("description");
 
                 clientss.add(new Clients(name, last_name, land, city, address, credit_card,
-                        phone, email, login, password, reg_date, salary, raise_salary, income, description));
+                        phone, email, login, password, reg_date));
 
                 System.out.println("post clients");
             }
             System.out.println("ClientsGet");
             return clientss;
+        }
+    }
+
+
+    public static List<Clients> getAccount(int check) throws SQLException, ClassNotFoundException {
+        String query = "SELECT salary, raise_salary, income, description FROM account WHERE id_user ='" + check + "'";
+        try (Connection c = ConnectionManager.getConnection();
+             PreparedStatement ps = c.prepareStatement(query);
+             ResultSet resultSet = ps.executeQuery();
+        ) {
+            ArrayList<Clients> account = new ArrayList<Clients>();
+            while (resultSet.next()) {
+                int salary = resultSet.getInt("salary");
+                int raise_salary = resultSet.getInt("raise_salary");
+                int income = resultSet.getInt("income");
+                String description = resultSet.getString("description");
+
+                account.add(new Clients(salary, raise_salary, income, description));
+            }
+            return account;
         }
     }
 
